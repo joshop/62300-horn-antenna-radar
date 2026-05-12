@@ -15,11 +15,14 @@ with open(data, mode='r') as file:
         m.append(float(row["measured_dist"]))
         r.append(float(row["real_dist"]))
 
+
 m = np.array(m)
 r = np.array(r)
 
 # remove the DC error to reject measurement error
 m = m - np.mean(m-r)
+print(m,r)
+print(np.sqrt(np.mean((m-r)**2)))
 
 plt.figure(figsize=(8, 6))
 

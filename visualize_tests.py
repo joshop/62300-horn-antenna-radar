@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
-# data = "test-results/exponential-test.csv"
-data = "test-results/conical-test.csv"
+data = "test-results/exponential-test.csv"
+# data = "test-results/conical-test.csv"
 
 m = []
 r = []
@@ -20,7 +20,7 @@ m = np.array(m)
 r = np.array(r)
 
 # remove the DC error to reject measurement error
-m = m - np.mean(m-r)
+m = m - .3
 print(m,r)
 print(np.sqrt(np.mean((m-r)**2)))
 
